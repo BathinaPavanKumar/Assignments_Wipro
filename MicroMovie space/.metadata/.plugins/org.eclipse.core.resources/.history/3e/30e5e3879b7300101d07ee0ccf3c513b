@@ -1,0 +1,32 @@
+package com.example.theater_service.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.theater_service.model.Theater;
+import com.example.theater_service.service.TheaterService;
+
+@Controller
+@RequestMapping("/theaters")
+public class TheaterController {
+	
+	@Autowired
+	TheaterService theaterService;
+
+	  @GetMapping
+	    public List<Theater> getAllTheaters() {
+	        return theaterService.getAllTheaters();
+	    }
+	  
+	  @GetMapping("/{id}")
+	    public Theater getTheater(@PathVariable Long id) {
+	        return theaterService.getTheaterById(id);
+	    }
+	  
+	  
+}

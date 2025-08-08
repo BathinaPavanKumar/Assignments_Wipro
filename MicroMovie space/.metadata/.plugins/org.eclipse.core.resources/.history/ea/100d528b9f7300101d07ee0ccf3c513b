@@ -1,0 +1,30 @@
+package com.example.customer_service.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.customer_service.repository.CustomerRepository;
+
+@Service
+public class CustomerService {
+	
+	@Autowired 
+	CustomerRepository customerRepository;
+	
+	public List<Customer> getAllCustomers() {
+        return repo.findAll();
+    }
+
+    public Customer getCustomerById(Long id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    public Customer saveCustomer(Customer customer) {
+        return repo.save(customer);
+    }
+
+    public void deleteCustomer(Long id) {
+        repo.deleteById(id);
+    }	
+
+}

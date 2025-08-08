@@ -1,0 +1,33 @@
+package com.example.booking_service.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.booking_service.repository.BookingRepository;
+
+@Service
+public class BookingService {
+	@Autowired
+	BookingRepository bookingRepository;
+
+
+    public List<Booking> getAllBookings() {
+        return repo.findAll();
+    }
+
+    public Booking getBookingById(Long id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    public Booking saveBooking(Booking booking) {
+        return repo.save(booking);
+    }
+
+    public void deleteBooking(Long id) {
+        repo.deleteById(id);
+    }
+
+    public List<Booking> getBookingsByCustomerId(Long customerId) {
+        return repo.findByCustomerId(customerId);
+    }
+}

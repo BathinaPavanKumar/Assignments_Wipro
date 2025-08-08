@@ -1,0 +1,12 @@
+package com.example.theater_service.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.theater_service.repository.TheaterRepository;
+
+@Service
+public class TheaterService {
+
+	@Autowired
+	TheaterRepository theaterRepository;
+}
