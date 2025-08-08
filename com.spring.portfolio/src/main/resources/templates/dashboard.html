@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+
+
+  .box1 {
+  display:flex;
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    justify-content:center;
+    height: 300px;
+    font-size:25px;
+  }
+  
+   .box2{
+    margin-left:50%;
+    margin-top:-21%;
+    width: 45%;
+    height: 50%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+   }
+   
+     nav ul { list-style: none; display: flex; justify-content: center; padding: 0; }
+        nav ul li { margin: 0 20px; }
+        nav ul li a { text-decoration: none; background: #88aadd; padding: 10px; color: white; border-radius: 5px; }
+        .content { max-width: 800px; margin: 30px auto; background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h2, h3 { text-align: center; }
+
+</style>
+
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/about}">ABOUT</a></li>
+        <li><a th:href="@{/education}">EDUCATION</a></li>
+        <li><a th:href="@{/skills}">SKILLS</a></li>
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+    </ul>
+</nav>
+<br>
+<br>
+<br>
+<h1 class ="h1">About Me</h1> 
+
+<br></br>
+<div class="container">
+<div class="box1" >
+<h5 class="h" >About Me</h5>
+
+<p class ="p"> From a young age, I've always had a sense <br> of motivation and passion driving me forward. Whether <br>
+     it's exploring unique opportunities, learning additional <br> skills, or meeting new people, I bring these values to <br>
+    every experience throughout my life on a personal <br> and professional level.</p>
+                 
+   
+</div>
+<div class="box2">
+<h1> Basic Information
+</h1>
+<p><strong>Date Of Birth:</strong></p>
+                <p>21-12-2002</p>
+                <p><strong>E-mail:</strong></p>
+                <p>70@gmail.com</p>
+                <p><strong>Mobile No:</strong></p>
+                <p>999999999</p>
+                <p><strong>Address:</strong></p>
+                <p>#175 hyd</p>
+</div>
+</div>
+</body>
+</html>

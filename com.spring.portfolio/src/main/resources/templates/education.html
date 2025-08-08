@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+        body { font-family: sans-serif; }
+        nav ul { list-style: none; display: flex; justify-content: center; padding: 0; }
+        nav ul li { margin: 0 20px; }
+        nav ul li a { text-decoration: none; background: #88aadd; padding: 10px; color: white; border-radius: 5px; }
+        .content { max-width: 800px; margin: 30px auto; background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h2, h3 { text-align: center; }
+    </style>
+
+</head>
+<body>
+
+<nav>  
+    <ul>
+        <li><a th:href="@{/about}">ABOUT</a></li>
+        <li><a th:href="@{/education}">EDUCATION</a></li>
+        <li><a th:href="@{/skills}">SKILLS</a></li>
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+    </ul>
+</nav>
+
+
+
+<h2>Education</h2>
+<div class="content">
+    <h3>Bachelor of Technology (B.Tech)</h3>
+    <p><strong>College:</strong> GIET</p>
+    <p><strong>Branch:</strong> ECE</p>
+    <p><strong>Year:</strong> 2020 - 2024</p>
+    <hr>
+    <h3>Pre-University (PUC)</h3>
+    <p><strong>College:</strong>Narayana Junior College</p>
+    <p><strong>Year:</strong> 2018 - 2020</p>
+    <hr>
+    <h3>High School</h3>
+    <p><strong>School:</strong> Kendriya Vidylaya</p>
+    <p><strong>Year:</strong> 2017 - 2018</p>
+</div>
+
+
+</body>
+</html>

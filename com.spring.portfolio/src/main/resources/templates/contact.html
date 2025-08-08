@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+        body { font-family: sans-serif; }
+        nav ul { list-style: none; display: flex; justify-content: center; padding: 0; }
+        nav ul li { margin: 0 20px; }
+        nav ul li a { text-decoration: none; background: #88aadd; padding: 10px; color: white; border-radius: 5px; }
+        .content { max-width: 600px; margin: 30px auto; background: white; padding: 20px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        p { margin: 10px 0; }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a th:href="@{/about}">ABOUT</a></li>
+        <li><a th:href="@{/education}">EDUCATION</a></li>
+        <li><a th:href="@{/skills}">SKILLS</a></li>
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+    </ul>
+</nav>
+
+
+<h2>Contact Me</h2>
+<div class="content">
+    <p><strong>Name:</strong> Pavan Kumar</p>
+    <p><strong>Email:</strong> @gmail.com</p>
+    <p><strong>Phone:</strong> 99999999</p>
+    <p><strong>Address:</strong> #175 hyd</p>
+</div>
+
+
+<br>
+
+<div>
+
+</div>
+
+
+</body>
+</html>
