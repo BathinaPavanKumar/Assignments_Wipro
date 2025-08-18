@@ -1,0 +1,16 @@
+package com.example.course_service.controller.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.config.TopicBuilder;
+
+@Configuration
+public class KafkaConfig {
+
+	@Bean
+	public NewTopic classCreatedTopic() {
+		return TopicBuilder.name("class-created")
+							.build();
+		
+	}
+}

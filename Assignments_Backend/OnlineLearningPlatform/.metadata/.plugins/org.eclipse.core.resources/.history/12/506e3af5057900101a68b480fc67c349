@@ -1,0 +1,15 @@
+package com.example.notification_service.controller;
+@RestController
+@RequestMapping("/api/notifications")
+public class NotificationController {
+
+	
+
+    @Autowired
+    private NotificationService notificationService;
+
+    @PostMapping("/send")
+    public String sendNotification(@RequestParam String message) {
+        return notificationService.sendNotification(message);
+	
+}

@@ -1,0 +1,10 @@
+package com.example.assessment_service.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+
+
+@FeignClient (name = "notification-service", url = "http://localhost:5555")
+public class FeignClient {
+
+}

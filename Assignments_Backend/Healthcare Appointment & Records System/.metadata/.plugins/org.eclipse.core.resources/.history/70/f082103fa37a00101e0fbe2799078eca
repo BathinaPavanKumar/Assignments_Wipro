@@ -1,0 +1,5 @@
+package com.example.bilings_service.repository;
+
+public interface BillingRepository {
+
+}

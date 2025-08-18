@@ -1,0 +1,13 @@
+package com.example.classroom_service.model;
+@Entity
+public class Classroom {
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long courseId;
+    private String courseName;
+    private Long teacherId;
+    private String schedule;
+
+
+}

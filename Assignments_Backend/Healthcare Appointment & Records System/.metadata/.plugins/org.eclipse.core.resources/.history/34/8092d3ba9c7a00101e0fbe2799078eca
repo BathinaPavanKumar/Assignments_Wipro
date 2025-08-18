@@ -1,0 +1,24 @@
+package com.example.notification_service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.KafkaListener;
+
+@SpringBootApplication
+public class NotificationServiceApplication {
+
+	
+	public static void main(String[] args) {
+		SpringApplication.run(NotificationServiceApplication.class, args);
+	}
+
+	
+    @KafkaListener(topics = "appointment-confirmed", groupId = "notification-group")
+    public void listenAppointment(String message) {
+        System.out.println("Received message from Appointment Service: " + message);
+        System.out.println("Simulating sending SMS/Email to patient: " + message);
+    }
+	
+}
+
+

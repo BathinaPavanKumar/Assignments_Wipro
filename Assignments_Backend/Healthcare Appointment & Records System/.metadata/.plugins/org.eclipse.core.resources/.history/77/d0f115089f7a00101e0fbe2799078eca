@@ -1,0 +1,8 @@
+package com.example.medical.records_service.feign;
+
+@FeignClient(name = "doctor-service", url = "http://localhost:8082")
+public interface DoctorClient {
+
+    @GetMapping("/doctors/{id}")
+    DoctorDTO getDoctorById(@PathVariable("id") Long id);
+}

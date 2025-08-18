@@ -1,0 +1,84 @@
+package com.example.bilings_service.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.bilings_service.model.Billing;
+@Repository
+public interface BillingRepository extends JpaRepository<Billing, Long>{
+
+	
+	 @Autowired
+	    private BillingRepository billingRepository;
+
+	    @Autowired
+	    private PatientClient patientClient;
+
+	    public Billing generateBill(Billing bill) {
+	        bill.setBillingDate(LocalDate.now());
+	        bill.setPaid(false);
+	        return repository.save(bill);
+	    }
+
+	    public List<BillingFullDTO> getAllBillsFull() {
+	        List<Billing> bills = repository.findAll();
+	        List<BillingFullDTO> result = new ArrayList<>();
+
+	        for (Billing bill : bills) {
+	            PatientDTO patient = patientClient.getPatientById(bill.getPatientId());
+
+	            BillingFullDTO dto = new BillingFullDTO();
+	            dto.setBillingId(bill.getId());
+	            dto.setMedicalRecordId(bill.getMedicalRecordId());
+	            dto.setAmount(bill.getAmount());
+	            dto.setBillingDate(bill.getBillingDate());
+	            dto.setPaid(bill.isPaid());
+	            dto.setPatient(patient);
+
+	            result.add(dto);
+	        }
+
+	        return result;
+	    }
+
+	    public Billing payBill(Long id) {
+	        Billing bill = repository.findById(id).orElse(null);
+	        if (bill != null) {
+	            bill.setPaid(true);
+	            repository.save(bill);
+	        }
+	        return bill;
+	    }
+
+	    public List<BillingFullDTO> getBillsByPatient(Long patientId) {
+	        List<Billing> bills = repository.findByPatientId(patientId);
+	        List<BillingFullDTO> result = new ArrayList<>();
+
+	        for (Billing bill : bills) {
+	            PatientDTO patient = patientClient.getPatientById(patientId);
+
+	            BillingFullDTO dto = new BillingFullDTO();
+	            dto.setBillingId(bill.getId());
+	            dto.setMedicalRecordId(bill.getMedicalRecordId());
+	            dto.setAmount(bill.getAmount());
+	            dto.setBillingDate(bill.getBillingDate());
+	            dto.setPaid(bill.isPaid());
+	            dto.setPatient(patient);
+
+	            result.add(dto);
+	        }
+
+	        return result;
+	    }
+
+	    public void deleteBill(Long id) {
+	        repository.deleteById(id);
+	    }
+	
+	
+	
+	
+	
+	
+}

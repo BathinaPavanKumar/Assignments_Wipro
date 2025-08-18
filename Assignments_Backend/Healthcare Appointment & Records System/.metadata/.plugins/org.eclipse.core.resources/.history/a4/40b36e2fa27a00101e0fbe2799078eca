@@ -1,0 +1,5 @@
+package com.example.bilings_service.model;
+
+public class Billing {
+
+}

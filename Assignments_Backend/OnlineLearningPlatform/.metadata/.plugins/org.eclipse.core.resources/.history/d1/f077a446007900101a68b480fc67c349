@@ -1,0 +1,11 @@
+package com.example.classroom_service.config;
+
+
+public class KafkaConfig {
+	
+	    
+
+	 
+}
+
+

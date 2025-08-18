@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+D:\OnlineLearningPlatform\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2738529941.index
+1050042363.index
+4161378668.index
+2389897713.index
+2543251686.index
+2960399442.index
+572072897.index
+3392093733.index
+3850036667.index
+1698827149.index
+3693709918.index

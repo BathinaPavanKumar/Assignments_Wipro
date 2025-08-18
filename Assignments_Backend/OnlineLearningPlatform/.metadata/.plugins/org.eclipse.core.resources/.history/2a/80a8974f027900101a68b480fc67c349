@@ -1,0 +1,6 @@
+package com.example.assessment_service.feign;
+
+@FeignClient (name = "notification-service", url = "http://localhost:8083")
+public class FeignClient {
+
+}

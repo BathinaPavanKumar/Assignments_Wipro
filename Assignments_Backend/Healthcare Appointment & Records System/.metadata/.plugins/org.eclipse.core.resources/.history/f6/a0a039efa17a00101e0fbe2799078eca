@@ -1,0 +1,2 @@
+spring.application.name=bilings-service
+server.port=6666

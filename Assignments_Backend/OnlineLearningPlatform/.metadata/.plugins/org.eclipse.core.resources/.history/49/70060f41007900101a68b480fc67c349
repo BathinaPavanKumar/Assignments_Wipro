@@ -1,0 +1,25 @@
+package com.example.classroom_service.config;
+
+@Configuration
+public class KafkaConfig {
+	 @Autowired
+	 private ClassroomService classroomService;
+	    
+
+	 @Bean
+	    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory(
+	            ConsumerFactory<String, String> consumerFactory) {
+	        ConcurrentKafkaListenerContainerFactory<String, String> factory =
+	                new ConcurrentKafkaListenerContainerFactory<>();
+	        factory.setConsumerFactory(consumerFactory);
+	        return factory;
+	    }
+	 
+	 @KafkaListener(topics = "class-created", groupId = "classroom-group")
+	    public void listenClassCreated(String message) {
+	        System.out.println("Received class created event: " + message);
+	 }
+
+}
+
+

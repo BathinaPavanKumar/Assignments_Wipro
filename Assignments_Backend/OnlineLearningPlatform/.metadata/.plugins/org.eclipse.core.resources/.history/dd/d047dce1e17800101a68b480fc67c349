@@ -1,0 +1,14 @@
+package com.example.course_service.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Course {
+
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+	    private String title;
+	    private String description;
+	    private Long teacherId;
+}

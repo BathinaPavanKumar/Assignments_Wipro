@@ -1,0 +1,8 @@
+package com.example.assessment_service.controller;
+
+
+@RestController
+@RequestMapping("/api/assignments")
+public class AssessmentController {
+
+}

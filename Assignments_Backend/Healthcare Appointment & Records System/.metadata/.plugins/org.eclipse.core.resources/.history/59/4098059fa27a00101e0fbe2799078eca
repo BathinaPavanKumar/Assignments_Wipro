@@ -1,0 +1,5 @@
+package com.example.bilings_service.feign;
+
+public interface PatientClient {
+
+}

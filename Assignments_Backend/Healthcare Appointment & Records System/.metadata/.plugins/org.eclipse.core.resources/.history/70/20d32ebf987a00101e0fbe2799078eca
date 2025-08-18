@@ -1,0 +1,10 @@
+package com.example.appointment_service.config;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class KafkaConfig {
+	
+	@Bean
+	  public KafkaTemplate<String,String> kafkaTemplate(){ return new KafkaTemplate<>(producerFactory()); }
+	}

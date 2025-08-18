@@ -1,0 +1,75 @@
+package com.example.medical.records_service.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.medical.records_service.feign.DoctorClient;
+import com.example.medical.records_service.feign.PatientClient;
+import com.example.medical.records_service.model.Medical;
+import com.example.medical.records_service.repository.MedicalRepository;
+
+@Service
+public class MedicalService {
+	
+
+    @Autowired
+    private MedicalRepository repository;
+
+    @Autowired
+    private PatientClient patientClient;
+
+    @Autowired
+    private DoctorClient doctorClient;
+    
+    
+    public Medical addRecord(Medical medical) {
+        return repository.save(medical);
+    }
+
+    public List<Medical> getAllRecords() {
+        return repository.findAll();
+    }
+    
+    public Medical getMedicalById(Long PatientId) {
+    	return repository.findByPatientId(PatientId);
+    }
+   
+    
+    public void deleteRecord(Long id) {
+        repository.deleteById(id);
+    }
+    
+    
+    public List<MedicalRecordFullDTO> getAllRecordsFull() {
+        List<MedicalRecord> records = repository.findAll();
+        List<MedicalRecordFullDTO> fullDTOs = new ArrayList<>();
+
+        for (MedicalRecord record : records) {
+            PatientDTO patient = patientClient.getPatientById(record.getPatientId());
+            DoctorDTO doctor = doctorClient.getDoctorById(record.getDoctorId());
+
+            MedicalRecordFullDTO fullDTO = new MedicalRecordFullDTO();
+            fullDTO.setId(record.getId());
+            fullDTO.setPatientId(record.getPatientId());
+            fullDTO.setDoctorId(record.getDoctorId());
+            fullDTO.setVisitDate(record.getVisitDate());
+            fullDTO.setDiagnosis(record.getDiagnosis());
+            fullDTO.setPrescription(record.getPrescription());
+            fullDTO.setTestResults(record.getTestResults());
+            fullDTO.setPatient(patient);
+            fullDTO.setDoctor(doctor);
+
+            fullDTOs.add(fullDTO);
+        }
+
+        return fullDTOs;
+    }
+    
+    
+    
+    
+    
+    
+}

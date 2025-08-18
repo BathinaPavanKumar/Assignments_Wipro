@@ -1,0 +1,10 @@
+package com.example.assessment_service.feign;
+@Feign
+public class FeignClient {
+	
+	public interface NotificationClient {
+	    @PostMapping("/api/notifications/send")
+	    String sendNotification(@RequestParam String message);
+	}
+
+}

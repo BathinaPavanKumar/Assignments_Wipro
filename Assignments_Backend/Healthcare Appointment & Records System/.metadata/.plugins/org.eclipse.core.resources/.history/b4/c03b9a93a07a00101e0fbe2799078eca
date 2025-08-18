@@ -1,0 +1,21 @@
+package com.example.medical.records_service.controller;
+
+import com.example.medical.records_service.service.MedicalService;
+
+@RestController
+@RequestMapping("/medical-records")
+public class MedicalController {
+
+	@Autowired
+    private MedicalService service;
+
+    
+    @PostMapping
+    public MedicalRecord addRecord(@RequestBody MedicalRecord record) {
+        return service.addRecord(record);
+    }
+    
+    
+	
+	
+}

@@ -1,0 +1,21 @@
+package com.example.course_service.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.course_service.model.Course;
+import com.example.course_service.repository.CourseRepository;
+
+@Service
+public class CourseService {
+
+	@Autowired
+	CourseRepository courseRepository;
+	
+	public List<Course> getAllCourses(){
+		return  courseRepository.findAll();
+	}
+	
+}

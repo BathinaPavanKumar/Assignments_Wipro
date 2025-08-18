@@ -1,0 +1,20 @@
+package com.example.doctor_service.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.doctor_service.model.Doctor;
+import com.example.doctor_service.repository.DoctorRepository;
+
+@Service
+public class DoctorService {
+
+	@Autowired
+	DoctorRepository doctorRepository;
+	
+	public List< Doctor> getAllDoctors(){
+		return doctorRepository.findAll();
+	}
+}

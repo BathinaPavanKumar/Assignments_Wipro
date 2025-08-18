@@ -1,0 +1,18 @@
+package com.example.assessment_service.model;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Assessment {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String title;
+    private String type; // Quiz or Assignment
+    private String description;
+    private String dueDate;
+    private Integer maxMarks;
+
+}

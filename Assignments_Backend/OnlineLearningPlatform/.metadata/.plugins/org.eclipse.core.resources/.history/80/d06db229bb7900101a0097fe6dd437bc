@@ -1,0 +1,11 @@
+package com.example.course_service.config;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name = "user-service", url = "http://localhost:1111/api/users")
+public class UserServiceClient {
+
+
+    @GetMapping("/{id}")
+    User getUserById(@PathVariable("id") Long id);
+}

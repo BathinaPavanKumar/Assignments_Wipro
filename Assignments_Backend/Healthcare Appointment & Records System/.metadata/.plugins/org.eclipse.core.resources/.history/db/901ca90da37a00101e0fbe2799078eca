@@ -1,0 +1,16 @@
+package com.example.bilings_service.dto;
+
+import java.time.LocalDate;
+
+public class BillingDTO {
+	
+	
+	private Long id;
+
+    private PatientDTO patient;          
+    private Long medicalRecordId;    
+    private double amount;           
+    private LocalDate billingDate;
+    private boolean paid;
+
+}

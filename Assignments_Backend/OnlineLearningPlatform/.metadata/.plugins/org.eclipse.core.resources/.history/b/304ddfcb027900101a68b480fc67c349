@@ -1,0 +1,10 @@
+package com.example.assessment_service.feign;
+import org.springframework.cloud.openfeign.FeignClient;
+
+
+@FeignClient
+public interface FeignClient {
+	 @PostMapping("/api/notifications/send")
+	    String sendNotification(@RequestParam String message);
+
+}

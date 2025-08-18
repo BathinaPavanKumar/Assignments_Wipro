@@ -1,0 +1,22 @@
+package com.example.classroom_service.service;
+@Service
+public class ClassroomService {
+	
+	
+	 @Autowired
+	    private ClassroomRepository classroomRepository;
+	 
+	 public List<Classroom> getAllClassrooms() {
+	        return classroomRepository.findAll();
+	    }
+
+	    public Optional<Classroom> getClassroomById(Long id) {
+	        return classroomRepository.findById(id);
+	    }
+
+	    public Classroom saveClassroom(Classroom classroom) {
+	        return classroomRepository.save(classroom);
+	    }
+
+
+}

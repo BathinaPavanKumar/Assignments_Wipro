@@ -1,0 +1,18 @@
+package com.example.medical.records_service.dto;
+
+import java.time.LocalDate;
+
+public class MedicalDTO {
+	
+    private Long id;
+
+    private Long patientId;       
+    private Long doctorId;        
+    private LocalDate visitDate;
+    private String diagnosis;
+    private String prescription;
+    private String testResults;
+    private PatientDTO patient;
+    private DoctorDTO doctor;
+
+}

@@ -1,0 +1,15 @@
+package com.example.assessment_service.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class AssessmentService {
+	
+
+    @Autowired
+    private AssignmentRepository assignmentRepository;
+
+    @Autowired
+    private NotificationClient notificationClient;
+
+}

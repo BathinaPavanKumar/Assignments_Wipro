@@ -1,0 +1,44 @@
+package com.example.course_service.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.course_service.model.Course;
+import com.example.course_service.repository.CourseRepository;
+
+@Service
+public class CourseService {
+
+	@Autowired
+	CourseRepository courseRepository;
+	
+	public List<Course> getAllCourses(){
+		return  courseRepository.findAll();
+	}
+	
+	 public Optional<Course> getCourseById(Long id) { 
+		 return courseRepository.findById(id);
+	}
+	 
+	 public Course createCourse(Course course) {
+		 return courseRepository.save(course);
+	 }
+	 
+	 
+	 public Course updateCourse(Long id, Course course) {
+	        return courseRepository.findById(id).map(c -> {
+	            c.setTitle(course.getTitle());
+	            c.setDescription(course.getDescription());
+	            c.setTeacherId(course.getTeacherId());
+	            return courseRepository.save(c);
+	        }).orElse(null);
+	    }
+	 
+	 
+	    public void deleteCourse(Long id) {
+	    
+	    }
+}
